@@ -1,0 +1,685 @@
+@import 'fonts.css';
+@import 'icon.css';
+
+
+/* 
+Root style sheet
+*/
+
+:root{
+    --Font_C: 'comforta';
+    --Font_M: 'montcerrat';
+    --Font_R: 'roboto';
+    --Font_AW: 'fontawesome';
+    --text: white;
+    --main: #040D1F;
+    --ads: linear-gradient(90deg, rgba(2, 0, 36, 0.17) 0%, rgba(9, 9, 121, 0.14) 31.40%, rgba(0, 212, 255, 0.20) 100%);
+    --nav: linear-gradient(to bottom right, rgba(0, 131, 253, 0.63) 0%, rgba(0, 131, 253, 0.00) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(0, 131, 253, 0.63) 0%, rgba(0, 131, 253, 0.00) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(0, 131, 253, 0.63) 0%, rgba(0, 131, 253, 0.00) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(0, 131, 253, 0.63) 0%, rgba(0, 131, 253, 0.00) 50%) top right / 50% 50% no-repeat;
+    --nav_hov: #1AE12E;
+    --content: radial-gradient(112.33% 87.19% at 29.24% 42.34%, rgba(129, 0, 108, 0.53) 73.45%, rgba(0, 94, 212, 0.53) 88.71%);
+    --content_desc: #C8C8C8;
+    --extra: radial-gradient(1364.46% 141.42% at 0.00% 100.00%, #8028F1 5.37%, #28F1E5 100%);
+    --films_bg: linear-gradient(180deg, rgba(42, 50, 250, 0.35) 0%, rgba(0, 0, 0, 0.71) 51.04%, rgba(255, 5, 170, 0.43) 100%);
+    --time_bg:  rgba(7, 15, 25, 0.20);
+    --black: black;
+    --pr:  linear-gradient(90deg, #FF00D6 0%, #005E7C 40.14%, rgba(0, 111, 147, 0.09) 78.63%);
+    --trend_bg: linear-gradient(270deg, rgba(9, 117, 252, 0.20) 0%, rgba(114, 9, 110, 0.56) 100%);
+    --serial_bg: linear-gradient(270deg, rgba(9, 117, 252, 0.20) 0%, rgba(114, 9, 110, 0.56) 100%); 
+    --footer: linear-gradient(90deg, rgba(2, 0, 36, 0.20) 0%, rgba(9, 9, 121, 0.14) 31.40%, rgba(0, 212, 255, 0.20) 100%);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.wrapper{
+    background: var(--main);
+    font-family: var(--Font_C);
+}
+
+.wrapper *::before,
+.wrapper *::after {
+font-family: var(--Font_AW);
+}
+
+.btn{
+    background: var(--extra);
+    padding: 15px 44px;
+    display: block;
+    width: max-content;
+    columns: var(--black);
+    font-family: var(--Font_R);
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn:hover{
+    background: var(--main);
+    color: var(--text);
+    transition: 400ms;
+}
+
+.title{
+    min-width: 1140px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 110px 15px 48px;
+    /* border: 1px solid white; */
+}
+
+.title_text{
+color: transparent;
+background: var(--extra);
+width: max-content;
+-webkit-background-clip: text;
+font-size: 36px;
+text-transform: capitalize;
+position: relative;
+}
+
+.title_text-bottom::before {
+content: '';
+height: 2px;
+width: 100%;
+background: var(--extra);
+position: absolute;
+bottom: 0;
+left: 0;
+border-radius: 6px 6px 0 0;
+} 
+
+.limiter{
+    display: -webkit-box; /* textlar bilan ishlash */
+    overflow: hidden;
+    min-height: 5px;
+    white-space: normal;
+    text-overflow: ellipsis;  /* davomi bo'lsa nuqta qo'yib beradi */
+    -webkit-box-orient: vertical;   /*yozuvni vertikal holatda qiberadi */
+    -webkit-line-clamp: 2; /* yozuvni nechi qator bo'lishi */
+}
+
+
+/*
+ ADS********************************************** 
+*/
+
+
+.ads{
+    background: var(--ads);
+    color: var(--text);      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.ads-film {
+    font-size: 50px;
+    margin-right: 24px; 
+
+}
+
+.ads-text {
+    width: 166px;
+}
+
+
+/*
+ HEADER************************************************************ 
+ */
+
+
+.header{
+    background: var(--nav);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(7.5px);  /* orqa fonini hira qiberadi */
+}
+
+.nav{
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headre_logo{
+    color: var(--text);
+    font-family: var(--Font_C);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nav_list{
+    display: flex;
+}
+
+.nav_link{
+    color: var(--text);
+    padding: 42px 6px;
+    display: flex;
+    justify-content: center;
+    transition: 400ms;
+    position: relative;
+}
+
+.nav_link:hover{
+    color: var(--nav_hov);
+}
+.nav_link::after{
+content: '';
+position: absolute;
+height: 2px;
+width: 0%;
+background: var(--nav_hov);
+border-radius: 6px 6px 0 0;
+bottom: 25px;
+/* left: 0; */
+transition: 600ms;
+opacity: 0;
+}
+
+.nav_link:hover::after {
+    width: 100%;
+    bottom: 0;
+    opacity: 1;
+}
+
+.nav_item{
+    margin-right: 18px;
+}
+
+.nav_item:last-of-type {
+margin-right: 0;
+}
+
+
+/* 
+BANNER*************************************************** 
+*/
+
+
+.banner{
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.banner_pic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* rasimni ham videoni ham biza bergan kenglikda ortiqchasini qirqib tashlab sig'dirib beradi */
+}
+
+.banner_content{
+    background: var(--content);
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner_container{
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+}
+
+.banner_title{
+    color: transparent;
+    background: var(--extra);
+    -webkit-background-clip: text;
+    font-family: var(--Font_M);
+    font-size: 96px;
+    font-weight: 700;
+}
+
+.banner_desc{
+    font-family: var(--Font_M);
+    max-width: 540px;
+    width: 100%;
+    color: var(--content_desc);
+    margin: 23px 0 32px;
+    line-height: 24px;
+    -webkit-line-clamp: 4;
+}
+
+.banner_btn{
+    display: flex;
+}
+
+.banner_btn .btn:first-of-type {
+margin-right: 30px;
+}
+
+
+
+/* 
+FILMS**********************************************************
+*/
+
+
+
+.films{
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    display: flex;
+}
+
+.films_bace{
+    border-radius: 6px;
+    color: var(--text);
+    margin-right: 29px;
+    width: calc(100/4);
+    transition: 300ms;
+}
+
+.films_bace:last-of-type{
+    margin-right: 0;
+}
+
+.films_content{
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.films_pic{
+    position: absolute;
+    object-fit: cover; /* rasm yoyilib ketmiydi */ 
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.films_item{
+    position: relative;
+    background: var(--films_bg);
+    padding: 56px 15px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 300ms;
+}
+
+.films_play{
+    font-size: 40px;
+    transition: 400ms;
+
+}
+
+.films_time{
+    padding: 8px 25px; 
+    border-radius: 9px;
+    border: 1px solid #FFF;
+    background: var(--time_bg);
+    margin: 13px 0 34px;
+    transition: 500ms;    
+}
+
+.films_title {
+    margin-bottom: 11px;
+    font-size: 22px;
+    font-family: var(--Font_M);
+    font-weight: 400;
+    transition: 300ms;
+}
+
+.films_desc{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--Font_R);
+    line-height: 21px;
+    -webkit-line-clamp: 6;
+}
+
+.films_item:hover .films_play {
+transform: translateY(20px) scale(2) rotate(360deg);
+}
+
+.films_item:hover .films_time {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.films_content:hover .films_pic{
+transform: scale(1.2);
+}
+
+.films_item:hover{
+    background: transparent;
+}
+
+
+.films_item:hover .films_title{
+  transform: scale(1.4) translateY(-20px);
+}
+
+.films_bace:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* 
+
+PRIMER***************************************************************************
+
+*/
+
+
+.primer{
+    margin-top: 70px;
+    position: relative;
+}
+
+.primer__video{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    right: 0;
+    object-fit: cover;
+}
+
+.primer__content{
+    background: var(--pr);
+    position: relative;
+    padding: 35px 0 80px;
+
+}
+
+.primer__container{
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+}
+
+.primer__desc{
+    max-width: 500px;
+    width: 100%;
+    margin: 60px 0 15px;
+    font-size: 18px;
+    font-family: var(--Font_R);
+    font-weight: 400;
+    line-height: 27px;
+}
+
+
+/* Trend******************************************************************* */
+
+
+.trend{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.title{
+    width: 1140px;
+}
+
+.trend_bace{
+width: calc(100% / 3);
+padding: 0 15px;
+transition: 300ms;
+}
+
+.trend_item{
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: 600ms;
+}
+
+.trend_pic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 400ms;
+}
+
+
+.trend_contend{
+    position: relative;
+    background: var(--trend_bg);
+    padding: 59px 0 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 600ms;
+}
+
+.trend-play{
+    font-size: 40px;
+    margin-bottom: 16px;
+    transition: 400ms;
+}
+
+.trend_title{
+    font-family: var(--Font_C);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text);
+    transition: 900ms;    
+}
+
+.trend_contend::after,
+.trend_contend::before {
+    content: '';
+    background:  url(../images/line.png) no-repeat center/cover;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    bottom: 7px;
+    width: 20px;
+}
+
+.trend_contend::before{
+    left: auto;
+    right: 7px;
+}
+
+/* .trend_bace:hover{
+    transform: scale(1.1);
+} */
+
+.trend_contend:hover .trend_title{
+    opacity: 0;
+    transform: scale(0);
+}
+
+.trend_contend:hover .trend-play{
+    transform: translateY(20px) scale(2) rotate(360deg);
+}
+
+.trend_item:hover .trend_pic{
+    transform: scale(1.1); 
+}
+
+.trend_contend:hover::after{
+    left: -50px;
+}
+
+.trend_contend:hover::before{
+    left: auto;
+    right: -50px;
+}
+
+
+
+/* Turk seriallari*********************************************************************** */
+
+
+
+.series {
+    width: min(100%, 1140px);
+    padding: 0 15px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    grid-auto-rows: 190px;
+
+}
+
+
+.series_item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    display: flex;  
+}
+
+.series_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.series_content {
+position: relative;
+background: var(--serial_bg);
+padding: 15px;   
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: var(--text);
+text-align: center;
+transition: 400ms;
+flex-grow: 1;
+}
+
+
+.series-play{
+    font-size: 40px;
+    margin-bottom: 20px;
+    transition: 400ms;
+}
+
+.series_title{
+    font-size: 24px;
+    font-weight: 700;
+    transition: 400ms;
+}
+
+.series_desc{
+    margin: 21px 0 12px;
+    line-height: 24px;
+
+}
+
+.series_item:nth-of-type(6n+1){
+  /* grid-column: 1 / 5; */
+     grid-column: span 4;
+     grid-row: span 2;
+}
+
+.series_item:nth-of-type(6n+2){
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.series_item:nth-of-type(6n+3) .series_content{
+    padding-top: 45px;
+    /* padding-bottom: 20px; */
+}
+
+
+.series_item:nth-of-type(6n+1) .series_title{
+    font-size: 40px; 
+    /* transform: scale(none); */
+}
+
+.series_item:nth-of-type(6n+1) .series_content {
+    justify-content: end;
+    padding-bottom: 35px;
+}
+
+.series_item:nth-of-type(6n+1):hover .series_title {
+    transform: none;
+    opacity: 1;
+}
+
+
+
+.series_content:hover .series-play{
+    transform: translateY(20px) scale(2) rotate(-360deg);
+}
+
+
+.series_content:hover .series_title{
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+
+
+/* Footer**************************************************************************** */
+
+
+
+footer{
+    background: var(--footer);
+}
+
+.footer{
+    width: min(100%, 1140px);
+    padding: 26px 15px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text);
+}
+
+.footer_img-item{
+    margin-right: 50px;
+}
+
+.footer_img-item:last-of-type{
+    margin-right: 0;
+}
+
+
+/* MEADIA QUERI */
+
+@media (max-width: 1043px) {
+    .films_title {
+        -webkit-line-clamp: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .films_bace{
+        width: calc(100%/ 2);
+    }
+}

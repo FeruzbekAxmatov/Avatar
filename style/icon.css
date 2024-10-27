@@ -1,0 +1,30 @@
+.icon-play::before{
+    content: '\f04b';
+    color: var(--text);
+    font-weight: 900;
+    position: absolute;
+}
+
+.icon-play::after{
+    content: '\10f04b';
+    color: var(--text);
+    font-weight: 900;
+    opacity: 0.5;
+}
+
+.icon-film::before {
+    content: '\f008';
+    color: var(--text);
+    font-weight: 300;
+}
+
+
+
+/* SERIES******************************************************************* */
+
+
+.series {
+ width: min(100%, 1140px);
+ padding: 0 15px;
+ margin: auto;
+}
